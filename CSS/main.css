@@ -124,9 +124,11 @@ body {
   color: black;
 }
 
-.before-submit ul li:hover {
-  background-color: var(--orange);
-  color: black;
+@media (min-width: 768px) {
+  .before-submit ul li:hover {
+    background-color: var(--orange);
+    color: black;
+  }
 }
 
 @media (max-width: 500px) {
