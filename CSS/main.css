@@ -1,0 +1,214 @@
+body {
+  min-height: 100vh;
+  font-family: "Overpass", sans-serif;
+  background-color: hsl(216, 12%, 8%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --gray500: hsl(217, 12%, 63%);
+  --orange: hsl(25, 97%, 53%);
+  --gray850: hsl(213 19% 21% / 1);
+}
+
+.before-after-formmat {
+  flex: 1;
+  max-width: 450px;
+  padding: 30px;
+  margin: 0 20px;
+  background-color: hsl(213, 19%, 18%);
+  border-radius: 15px;
+  box-shadow: inset 0 0 40px 0 hsl(213 19% 11% / 1);
+}
+
+@media (max-width: 500px) {
+  .before-submit {
+    padding: 30px 20px;
+  }
+}
+
+.before-submit .star {
+  width: 50px;
+  height: 50px;
+  background-color: var(--gray850);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 500px) {
+  .before-submit .star {
+    width: 40px;
+    height: 40px;
+  }
+  .before-submit .star img {
+    width: 16px;
+  }
+}
+
+.before-submit .star img {
+  width: 18px;
+}
+
+@media (max-width: 500px) {
+  .before-submit .star img {
+    width: 16px;
+  }
+}
+
+.before-submit h1 {
+  color: white;
+  margin: 30px 0 15px;
+}
+
+@media (max-width: 500px) {
+  .before-submit h1 {
+    font-size: 25px;
+    margin: 20px 0 15px;
+  }
+}
+
+.before-submit p {
+  color: var(--gray500);
+  line-height: 1.6;
+  max-width: 385px;
+}
+
+@media (max-width: 500px) {
+  .before-submit p {
+    font-size: 14px;
+  }
+}
+
+.before-submit ul {
+  list-style: none;
+  height: 57px;
+  margin: 30px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+@media (max-width: 500px) {
+  .before-submit ul {
+    gap: 15px;
+    margin: 20px 0;
+  }
+}
+
+.before-submit ul li {
+  background-color: hsl(210deg 22.29% 19.44%);
+  color: var(--gray500);
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: bold;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s background-color, color;
+}
+
+.before-submit .active {
+  background-color: white;
+  color: black;
+}
+
+.before-submit ul li:hover {
+  background-color: var(--orange);
+  color: black;
+}
+
+@media (max-width: 500px) {
+  .before-submit ul li {
+    font-size: 16px;
+  }
+}
+
+.before-submit .submit {
+  display: block;
+  padding: 15px;
+  background-color: var(--orange);
+  border-radius: 40px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+@media (max-width: 500px) {
+  .before-submit .submit {
+    padding: 12px;
+  }
+}
+
+.before-submit .submit:hover {
+  background-color: white;
+}
+
+.after-submit {
+  display: none;
+  padding: 50px 40px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 500px) {
+  .after-submit {
+    padding: 40px 38px;
+  }
+}
+
+@media (max-width: 500px) {
+  .after-submit img {
+    width: 140px;
+  }
+}
+
+.after-submit p:first-of-type {
+  background-color: var(--gray850);
+  color: var(--orange);
+  padding: 9px 28px;
+  margin-top: 35px;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+@media (max-width: 500px) {
+  .after-submit p:first-of-type {
+    padding: 8px 25px;
+    margin-top: 28px;
+  }
+}
+
+.after-submit h2 {
+  color: white;
+  font-size: 33px;
+  font-weight: 500;
+  margin: 40px 0 15px;
+}
+
+@media (max-width: 500px) {
+  .after-submit h2 {
+    font-size: 30px;
+    margin: 30px 0 15px;
+  }
+}
+
+.after-submit p:last-of-type {
+  color: var(--gray500);
+  text-align: center;
+  max-width: 360px;
+}
