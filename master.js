@@ -13,17 +13,24 @@ window.onresize = function () {
 
 function beforeAndAfterSubmit(event) {
   allLis.forEach((li) => {
-    li.addEventListener(event, function (e) {
+    li.addEventListener(event, (e) => {
       allLis.forEach((li) => {
         li.classList.remove("active");
       });
       e.target.classList.add("active");
       rateNumber = e.target.textContent;
-      submit.onclick = function () {
-        beforeSubmit.remove();
-        afterSubmit.style.display = "flex";
-        afterSubmitFirstP.textContent = `You selected ${rateNumber} out of 5`;
-      };
+      function submitRating(event) {
+        submit.addEventListener(event, function () {
+          beforeSubmit.remove();
+          afterSubmit.style.display = "flex";
+          afterSubmitFirstP.textContent = `You selected ${rateNumber} out of 5`;
+        });
+      }
+      if (matchMedia("(max-width: 767px)").matches) {
+        submitRating("touchstart");
+      } else {
+        submitRating("click");
+      }
     });
   });
 }
