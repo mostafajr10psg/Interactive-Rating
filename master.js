@@ -1,42 +1,27 @@
-let allLis = document.querySelectorAll("ul li");
-let ul = document.querySelector("ul");
-let submit = document.querySelector(".submit");
-let afterSubmit = document.querySelector(".after-submit");
-let beforeSubmit = document.querySelector(".before-submit");
-let afterSubmitFirstP = document.querySelector(".after-submit p:first-of-type");
+const feedback = document.querySelector(".feedback");
+const allLis = document.querySelectorAll("ul li");
+const submitBtn = document.querySelector(".submit");
+const submitError = document.querySelector(".submit-error");
+const afterSubmit = document.querySelector(".after-submit");
+const afterSubmitRating = document.querySelector(".after-submit .rating span");
 let rateNumber = 0;
 
-ul.style.height = getComputedStyle(allLis[0]).getPropertyValue("width");
-window.onresize = function () {
-  ul.style.height = getComputedStyle(allLis[0]).getPropertyValue("width");
-};
-
-function beforeAndAfterSubmit(event) {
-  allLis.forEach((li) => {
-    li.addEventListener(event, (e) => {
-      allLis.forEach((li) => {
-        li.classList.remove("active");
-      });
-      e.target.classList.add("active");
-      rateNumber = e.target.textContent;
-      function submitRating(event) {
-        submit.addEventListener(event, function () {
-          beforeSubmit.remove();
-          afterSubmit.style.display = "flex";
-          afterSubmitFirstP.textContent = `You selected ${rateNumber} out of 5`;
-        });
-      }
-      if (matchMedia("(max-width: 767px)").matches) {
-        submitRating("touchstart");
-      } else {
-        submitRating("click");
-      }
+allLis.forEach((li) => {
+  li.addEventListener("click", (e) => {
+    allLis.forEach((li) => {
+      li.classList.remove("active");
     });
+    e.target.classList.add("active");
+    rateNumber = e.target.textContent;
   });
-}
+});
 
-if (matchMedia("(max-width: 767px)").matches) {
-  beforeAndAfterSubmit("touchstart");
-} else {
-  beforeAndAfterSubmit("click");
-}
+submitBtn.addEventListener("click", () => {
+  if (rateNumber === 0) {
+    submitError.classList.remove("hidden");
+  } else {
+    feedback.classList.add("hidden");
+    afterSubmit.classList.remove("hidden");
+    afterSubmitRating.textContent = rateNumber;
+  }
+});

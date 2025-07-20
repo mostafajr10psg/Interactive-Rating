@@ -1,10 +1,5 @@
-body {
-  min-height: 100vh;
-  font-family: "Overpass", sans-serif;
-  background-color: hsl(216, 12%, 8%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+html {
+  font-size: 62.5%;
 }
 
 * {
@@ -17,200 +12,239 @@ body {
   --gray500: hsl(217, 12%, 63%);
   --orange: hsl(25, 97%, 53%);
   --gray850: hsl(213 19% 21% / 1);
+  --gray900: hsl(213 19% 18%);
 }
 
-.before-after-formmat {
-  flex: 1;
-  max-width: 450px;
-  padding: 30px;
-  margin: 0 20px;
-  background-color: hsl(213, 19%, 18%);
-  border-radius: 15px;
-  box-shadow: inset 0 0 40px 0 hsl(213 19% 11% / 1);
-}
-
-@media (max-width: 500px) {
-  .before-submit {
-    padding: 30px 20px;
-  }
-}
-
-.before-submit .star {
-  width: 50px;
-  height: 50px;
-  background-color: var(--gray850);
-  border-radius: 50%;
+.d-flex-center-x-y {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.hidden {
+  display: none;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Overpass", sans-serif;
+  font-size: 1.6rem;
+  background-color: hsl(216, 12%, 8%);
+}
+
+main {
+  flex: 1;
+  max-width: 45rem;
+  margin: 0 2rem;
+  background-image: linear-gradient(
+    to bottom,
+    hsl(215, 20%, 15%) 40%,
+    hsl(215 25% 13% / 1)
+  );
+  border-radius: 30px;
+}
+
+.feedback {
+  padding: 3.5rem;
+}
+
 @media (max-width: 500px) {
-  .before-submit .star {
-    width: 40px;
-    height: 40px;
-  }
-  .before-submit .star img {
-    width: 16px;
+  .feedback {
+    padding: 3rem 2rem;
   }
 }
 
-.before-submit .star img {
-  width: 18px;
+.feedback .star {
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--gray850);
+  border-radius: 50%;
 }
 
 @media (max-width: 500px) {
-  .before-submit .star img {
-    width: 16px;
+  .feedback .star {
+    width: 4rem;
+    height: 4rem;
   }
 }
 
-.before-submit h1 {
+@media (max-width: 500px) {
+  .feedback .star img {
+    width: 1.6rem;
+  }
+}
+
+.feedback h1 {
+  margin: 4rem 0 1.5rem;
   color: white;
-  margin: 30px 0 15px;
+  font-size: 3rem;
 }
 
 @media (max-width: 500px) {
-  .before-submit h1 {
-    font-size: 25px;
-    margin: 20px 0 15px;
+  .feedback h1 {
+    font-size: 2rem;
+    margin-top: 2rem;
   }
 }
 
-.before-submit p {
+.feedback .desc {
   color: var(--gray500);
+  max-width: 38.5rem;
   line-height: 1.6;
-  max-width: 385px;
 }
 
 @media (max-width: 500px) {
-  .before-submit p {
-    font-size: 14px;
+  .feedback .desc {
+    font-size: 1.4rem;
   }
 }
 
-.before-submit ul {
+.feedback ul {
   list-style: none;
-  height: 57px;
-  margin: 30px 0;
+  height: 5.5rem;
+  margin: 2.5rem 0 3.5rem;
   display: flex;
   justify-content: space-between;
-  gap: 25px;
+  gap: 1.5rem;
 }
 
-@media (max-width: 500px) {
-  .before-submit ul {
-    gap: 15px;
-    margin: 20px 0;
+@media (max-width: 400px) {
+  .feedback ul {
+    height: 4.5rem;
   }
 }
 
-.before-submit ul li {
+@media (max-width: 500px) {
+  .feedback ul {
+    margin: 2rem 0;
+  }
+}
+
+.feedback ul li {
+  width: 5.5rem;
   background-color: hsl(210deg 22.29% 19.44%);
   color: var(--gray500);
   border-radius: 50%;
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: bold;
-  flex: 1;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   cursor: pointer;
-  transition: 0.3s background-color, color;
+  transition: 0.3s background-color, 0.3s color;
 }
 
-.before-submit .active {
+@media (max-width: 400px) {
+  .feedback ul li {
+    width: 4.5rem;
+  }
+}
+
+.feedback .active {
   background-color: white;
   color: black;
 }
 
 @media (min-width: 768px) {
-  .before-submit ul li:hover {
+  .feedback ul li:hover {
     background-color: var(--orange);
     color: black;
   }
 }
 
 @media (max-width: 500px) {
-  .before-submit ul li {
-    font-size: 16px;
+  .feedback ul li {
+    font-size: 1.6rem;
   }
 }
 
-.before-submit .submit {
+.feedback .submit {
   display: block;
-  padding: 15px;
+  width: 100%;
+  padding: 1.5rem;
   background-color: var(--orange);
+  border: none;
   border-radius: 40px;
-  text-align: center;
+  letter-spacing: 0.2rem;
+  font-size: 1.7rem;
   font-weight: bold;
+  text-align: center;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.3s background-color;
 }
 
 @media (max-width: 500px) {
-  .before-submit .submit {
-    padding: 12px;
+  .feedback .submit {
+    font-size: 1.5rem;
   }
 }
 
-.before-submit .submit:hover {
+.feedback .submit:hover {
   background-color: white;
 }
 
+@media (max-width: 500px) {
+  .feedback .submit {
+    padding: 1.2rem;
+  }
+}
+
+.feedback .submit-error {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  color: red;
+}
+
 .after-submit {
-  display: none;
-  padding: 50px 40px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  transition: 1s;
+  text-align: center;
+  padding: 5rem 4rem;
 }
 
 @media (max-width: 500px) {
   .after-submit {
-    padding: 40px 38px;
+    padding: 3rem;
   }
-}
 
-@media (max-width: 500px) {
   .after-submit img {
     width: 140px;
   }
 }
 
-.after-submit p:first-of-type {
+.after-submit .rating {
+  width: fit-content;
+  margin: 3.5rem auto 0;
   background-color: var(--gray850);
   color: var(--orange);
-  padding: 9px 28px;
-  margin-top: 35px;
+  padding: 0.9rem 2.8rem;
   border-radius: 25px;
-  font-size: 15px;
+  font-size: 1.5rem;
   font-weight: 300;
 }
 
 @media (max-width: 500px) {
-  .after-submit p:first-of-type {
-    padding: 8px 25px;
-    margin-top: 28px;
+  .after-submit .rating {
+    padding: 0.8rem 2.5rem;
+    margin-top: 2.8rem;
   }
 }
 
 .after-submit h2 {
+  margin: 4rem 0 1.5rem;
   color: white;
-  font-size: 33px;
+  font-size: 3rem;
   font-weight: 500;
-  margin: 40px 0 15px;
 }
 
 @media (max-width: 500px) {
   .after-submit h2 {
-    font-size: 30px;
-    margin: 30px 0 15px;
+    font-size: 3rem;
+    margin-top: 3rem;
   }
 }
 
-.after-submit p:last-of-type {
+.after-submit .thanks-msg {
   color: var(--gray500);
-  text-align: center;
-  max-width: 360px;
+  max-width: 36rem;
 }
